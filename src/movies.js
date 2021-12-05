@@ -77,34 +77,6 @@ function orderAlphabetically(arr) {
   return movieTitle.title.slice(0, 20); // to have the 20 first letters
 }
 
-
-
-function orderAlphabetically(givenArrayWithoutOrder) {
-
-  let newArray = Array.from(givenArrayWithoutOrder)
-
-  newArray.sort((previousItem,nextItem) => previousItem.title.localeCompare(nextItem.title))
-
-  if (newArray.length>20) {
-    newArray.splice(20)
-  }
-
-  let arrayOfTitles = []
-
-  for (let i = 0;i<newArray.length;i++){
-    arrayOfTitles.push(newArray[i].title)
-  }
-
-  return arrayOfTitles
-
-}
-
-console.log(orderAlphabetically(movies))
-
-
-
-console.log(orderAlphabetically('./movies.js'));
-
 // BONUS - Iteration 7: Time Format - Turn duration of the movies from hours to minutes
 function turnHoursToMinutes() {}
 
