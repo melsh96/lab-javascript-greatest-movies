@@ -69,12 +69,39 @@ function orderAlphabetically(arr) {
 
   const orderByAlpha = arr.map((title) => title);
   const movieTitle = orderByAlpha.sort((acc, current) => {
-    if (acc > current) return 1;
-    else if (acc < current) return -1;
+    let res = acc.title.localeCompare(current.title);
+    if (res > 20);
+    else if (res < 20);
     else return 0;
   });
-  return movieTitle.title.slice(0, 20);
+  return movieTitle.title.slice(0, 20); // to have the 20 first letters
 }
+
+
+
+function orderAlphabetically(givenArrayWithoutOrder) {
+
+  let newArray = Array.from(givenArrayWithoutOrder)
+
+  newArray.sort((previousItem,nextItem) => previousItem.title.localeCompare(nextItem.title))
+
+  if (newArray.length>20) {
+    newArray.splice(20)
+  }
+
+  let arrayOfTitles = []
+
+  for (let i = 0;i<newArray.length;i++){
+    arrayOfTitles.push(newArray[i].title)
+  }
+
+  return arrayOfTitles
+
+}
+
+console.log(orderAlphabetically(movies))
+
+
 
 console.log(orderAlphabetically('./movies.js'));
 
